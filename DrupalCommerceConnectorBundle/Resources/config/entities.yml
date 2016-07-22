@@ -1,0 +1,2 @@
+parameters:
+    actualys_drupal_commerce_connector.entity.product_export.class: Actualys\Bundle\DrupalCommerceConnectorBundle\Entity\ProductExport

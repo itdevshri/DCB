@@ -1,0 +1,21 @@
+parameters:
+     actualys_drupal_commerce_connector.manager.product_export.class: Actualys\Bundle\DrupalCommerceConnectorBundle\Manager\ProductExportManager
+   #  actualys_drupal_commerce_connector.manager.association.class: Actualys\Bundle\DrupalCommerceConnectorBundle\Manager\AssociationManager
+
+services:
+    actualys_drupal_commerce_connector.manager.product_export:
+        class: %actualys_drupal_commerce_connector.manager.product_export.class%
+        arguments:
+            - @doctrine.orm.entity_manager
+            - %actualys_drupal_commerce_connector.entity.product_export.class%
+            - %pim_catalog.entity.product.class%
+
+    actualys_drupal_commerce_connector.manager.product_value_export:
+        parent: actualys_drupal_commerce_connector.manager.product_export
+        arguments:
+            - true
+            
+   # actualys_drupal_commerce_connector.manager.association:
+    #    class: %actualys_drupal_commerce_connector.manager.association.class%
+     #   arguments:
+      #      - %pim_catalog.repository.association_repository_interface.class
